@@ -1,3 +1,5 @@
+import CardWidget from "../CardWidget/CardWidget";
+
 const NavBar = () => {
   return (
     <header className="header">
@@ -31,7 +33,7 @@ const NavBar = () => {
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                Nosotros
+                  Nosotros
                 </a>
               </li>
               <li class="nav-item">
@@ -40,6 +42,7 @@ const NavBar = () => {
             </ul>
           </div>
         </div>
+        <CardWidget />
       </nav>
     </header>
   );
