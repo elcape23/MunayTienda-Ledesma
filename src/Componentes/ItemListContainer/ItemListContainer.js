@@ -14,8 +14,8 @@ const styles = {
   },
 };
 
-const ItemListContainer = () => {
-  return <h1 style={styles.itemStyles}>Bienvenidos a Munay</h1>;
+const ItemListContainer = ({ name }) => {
+  return <h1 style={styles.itemStyles}>¡Hola {name}! Bienvenido a Munay</h1>;
 };
 
 export default ItemListContainer;

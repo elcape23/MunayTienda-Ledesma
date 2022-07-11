@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer name="Rosendo" />
     </>
   );
 }
