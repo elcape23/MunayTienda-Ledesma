@@ -12,15 +12,24 @@ function App() {
   const disminuir = () => {
     setCantidad(cantidad - 1);
   };
+
   return (
     <>
       <NavBar />
       <ItemListContainer name="Rosendo" />
-      <ItemCount
-        cantidad={cantidad}
-        incrementar={incrementar}
-        disminuir={disminuir}
-      />
+      {cantidad >= 0 && cantidad < 5 ? (
+        <ItemCount
+          cantidad={cantidad}
+          incrementar={incrementar}
+          disminuir={disminuir}
+        />
+      ) : (
+        <ItemCount
+          cantidad="Sin stock"
+          incrementar={incrementar}
+          disminuir={disminuir}
+        />
+      )}
     </>
   );
 }

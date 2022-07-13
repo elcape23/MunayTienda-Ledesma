@@ -11,7 +11,7 @@ const CardWidget = () => {
       <img
         style={styles.cardStyle}
         src="./images/Carrito.png"
-        ClassName="Carrito"
+        className="Carrito"
       />
     </div>
   );
