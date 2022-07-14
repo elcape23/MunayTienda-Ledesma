@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import ItemCount from "./Componentes/ItemCount/ItemCount";
 import ItemListContainer from "./Componentes/ItemListContainer/ItemListContainer";
 import NavBar from "./Componentes/NavBar/NavBar";
 
@@ -16,8 +15,8 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer name="Rosendo" />
-      {cantidad >= 0 && cantidad < 5 ? (
+      <ItemListContainer name="Rosendo" className="listContainer" />
+      {/* {cantidad >= 0 && cantidad < 5 ? (
         <ItemCount
           cantidad={cantidad}
           incrementar={incrementar}
@@ -29,7 +28,7 @@ function App() {
           incrementar={incrementar}
           disminuir={disminuir}
         />
-      )}
+      )} */}
     </>
   );
 }
