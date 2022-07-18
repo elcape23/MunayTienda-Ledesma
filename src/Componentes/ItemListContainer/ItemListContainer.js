@@ -1,4 +1,6 @@
 import ItemList from "../ItemList/ItemList";
+import Products from "../../API/Products.js";
+import { useState, useEffect } from "react";
 
 const styles = {
   itemStyles: {
@@ -24,11 +26,29 @@ const styles = {
 };
 
 const ItemListContainer = ({ name }) => {
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    const getProducts = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(Products);
+      }, 2000);
+    });
+    getProducts
+      .then((data) => {
+        setItems(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+
   return (
     <>
       <h1 style={styles.itemStyles}>¡Hola {name}! Bienvenido a Munay</h1>
       <div style={styles.ItemListContainer}>
-        <ItemList />
+        <ItemList
+          items={items}
+        />
       </div>
     </>
   );
