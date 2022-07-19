@@ -29,12 +29,13 @@ const styles = {
     fontWeight: "600",
   },
 };
-const Item = ({ image, title, description }) => {
+const Item = ({ image, title, description, price }) => {
   return (
     <div style={styles.item}>
       <img style={styles.itemImage} src={image} />
       <h2>{title}</h2>
       <div>{description}</div>
+      <h1>{price}</h1>
       <button style={styles.itemButton}>Agregar</button>
     </div>
   );

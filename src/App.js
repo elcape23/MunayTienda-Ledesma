@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import ItemDetailContainer from "./Componentes/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./Componentes/ItemListContainer/ItemListContainer";
 import NavBar from "./Componentes/NavBar/NavBar";
 
@@ -16,6 +17,7 @@ function App() {
     <>
       <NavBar />
       <ItemListContainer name="Rosendo" className="listContainer" />
+      <ItemDetailContainer />
       {/* {cantidad >= 0 && cantidad < 5 ? (
         <ItemCount
           cantidad={cantidad}
