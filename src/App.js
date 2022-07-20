@@ -17,7 +17,6 @@ function App() {
     <>
       <NavBar />
       <ItemListContainer name="Rosendo" className="listContainer" />
-      <ItemDetailContainer />
       {/* {cantidad >= 0 && cantidad < 5 ? (
         <ItemCount
           cantidad={cantidad}

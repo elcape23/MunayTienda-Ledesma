@@ -29,14 +29,25 @@ const styles = {
     fontWeight: "600",
   },
 };
-const Item = ({ image, title, description, price }) => {
+const Item = ({ items }) => {
+  const [itemDetail, setItemDetail] = useState();
+
+  const getItem = (event, id) => {
+    console.log(id);
+  };
   return (
     <div style={styles.item}>
-      <img style={styles.itemImage} src={image} />
-      <h2>{title}</h2>
-      <div>{description}</div>
-      <h1>{price}</h1>
-      <button style={styles.itemButton}>Agregar</button>
+      <img style={styles.itemImage} src={items.image} />
+      <h2>{items.title}</h2>
+      <div>{items.description}</div>
+      <h1>{items.price}</h1>
+      <h6>Nº{items.id}</h6>
+      <button
+        style={styles.itemButton}
+        onClick={(event) => getItem(event, items.id)}
+      >
+        Agregar
+      </button>
     </div>
   );
 };

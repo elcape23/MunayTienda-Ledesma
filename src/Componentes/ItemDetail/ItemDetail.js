@@ -19,12 +19,13 @@ const styles = {
 };
 
 const ItemDetail = ({ items }) => {
-  return items.map((items, index) => (
+
+  return items.map((item) => (
     <div style={styles.itemDetail}>
-      <h1>{items.title}</h1>
-      <h6>Producto Nº{index}</h6>
-      <img src={items.image} style={styles.itemImage} />
-      <h2 style={styles.itemButton}>{items.price}</h2>
+      <h1>{item.title}</h1>
+      <h6>Producto Nº{item.id}</h6>
+      <img src={item.image} style={styles.itemImage} />
+      <h2 style={styles.itemButton}>{item.price}</h2>
     </div>
   ));
 };
