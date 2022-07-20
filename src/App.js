@@ -1,36 +1,18 @@
-import { useState } from "react";
 import "./App.css";
 import ItemDetailContainer from "./Componentes/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./Componentes/ItemListContainer/ItemListContainer";
 import NavBar from "./Componentes/NavBar/NavBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  // const [cantidad, setCantidad] = useState(0);
-  // const incrementar = () => {
-  //   setCantidad(cantidad + 1);
-  // };
-  // const disminuir = () => {
-  //   setCantidad(cantidad - 1);
-  // };
-
   return (
-    <>
+    <BrowserRouter>
       <NavBar />
-      <ItemListContainer name="Rosendo" className="listContainer" />
-      {/* {cantidad >= 0 && cantidad < 5 ? (
-        <ItemCount
-          cantidad={cantidad}
-          incrementar={incrementar}
-          disminuir={disminuir}
-        />
-      ) : (
-        <ItemCount
-          cantidad="Sin stock"
-          incrementar={incrementar}
-          disminuir={disminuir}
-        />
-      )} */}
-    </>
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="details/:id" element={<ItemDetailContainer />}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
