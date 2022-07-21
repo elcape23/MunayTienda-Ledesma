@@ -46,9 +46,7 @@ const ItemListContainer = ({ name }) => {
     <>
       <h1 style={styles.itemStyles}>¡Hola {name}! Bienvenido a Munay</h1>
       <div style={styles.ItemListContainer}>
-        <ItemList
-          items={items}
-        />
+        <ItemList items={items} />
       </div>
     </>
   );

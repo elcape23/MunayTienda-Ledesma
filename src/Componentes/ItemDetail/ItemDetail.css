@@ -1,0 +1,34 @@
+.div-detail {
+  width: 40vw;
+  background-color: #dbd4ca;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+}
+
+.image-item {
+  width: 40vw;
+  border-radius: 50px 50px 0px 0px;
+  justify-self: center;
+}
+
+.item-description {
+  font-size: 25px;
+  font-weight: lighter;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.item-title {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.item-id {
+  font-size: 20px;
+  font-weight: lighter;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.4);
+}

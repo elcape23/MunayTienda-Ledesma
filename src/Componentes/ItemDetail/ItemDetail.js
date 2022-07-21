@@ -1,33 +1,16 @@
-const styles = {
-  itemDetail: {
-    backgroundColor: "#f4dacd",
-    width: "40vw",
-    marginLeft: "auto",
-    marginRight: "auto",
-  },
-  itemImage: {
-    heigth: "auto",
-    width: "100%",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  },
-  itemButton: {
-    color: "white",
-    backgroundColor: "#373435",
-  },
-};
+import Item from "../Item/Item";
+import "./ItemDetail.css";
 
 const ItemDetail = ({ items }) => {
-
-  return items.map((item) => (
-    <div style={styles.itemDetail}>
-      <h1>{item.title}</h1>
-      <h6>Producto Nº{item.id}</h6>
-      <img src={item.image} style={styles.itemImage} />
-      <h2 style={styles.itemButton}>{item.price}</h2>
+  return (
+    <div className="div-detail">
+      <img src={items.image} className="image-item" />
+      <h1 className="item-title">{items.title}</h1>
+      <h5 className="item-id">{items.id}</h5>
+      <h2 className="item-description">{items.description}</h2>
+      <h1>{items.precio}</h1>
     </div>
-  ));
+  );
 };
 
 export default ItemDetail;

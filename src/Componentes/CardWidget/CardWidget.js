@@ -1,3 +1,5 @@
+import Carrito from "../../Assets/Carrito.png";
+
 const styles = {
   cardStyle: {
     width: "50%",
@@ -8,11 +10,7 @@ const styles = {
 const CardWidget = () => {
   return (
     <div>
-      <img
-        style={styles.cardStyle}
-        src="./images/Carrito.png"
-        className="Carrito"
-      />
+      <img style={styles.cardStyle} src={Carrito} className="Carrito" />
     </div>
   );
 };

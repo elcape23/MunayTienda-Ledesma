@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+}
+
+.logo-image {
+  width: 15%;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  width: 30vw;
+  justify-content: space-between;
+  margin-right: 10vw;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: black;
+}
+
+.active-link {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const styles = {
   item: {
@@ -31,7 +32,7 @@ const styles = {
     fontWeight: "600",
   },
 };
-const Item = ({ items }) => {
+const Item = ({ id, title, description, price, image }) => {
   const [itemDetail, setItemDetail] = useState();
 
   const getItem = (event, id) => {
@@ -39,17 +40,14 @@ const Item = ({ items }) => {
   };
   return (
     <div style={styles.item}>
-      <img style={styles.itemImage} src={items.image} />
-      <h2>{items.title}</h2>
-      <div>{items.description}</div>
-      <h1>{items.price}</h1>
-      <h6>Nº{items.id}</h6>
-      <button
-        style={styles.itemButton}
-        onClick={(event) => getItem(event, items.id)}
-      >
-        Agregar
-      </button>
+      <img style={styles.itemImage} src={image} />
+      <h2>{title}</h2>
+      <div>{description}</div>
+      <h1>{price}</h1>
+      <h6>Nº{id}</h6>
+      <Link to={`/details/${id}`}>
+        <button style={styles.itemButton}>Ver producto</button>
+      </Link>
     </div>
   );
 };

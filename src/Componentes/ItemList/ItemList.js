@@ -3,20 +3,15 @@ import { Link } from "react-router-dom";
 
 const ItemList = ({ items }) => {
   return (
-    <div>
+    <div style={{ display: "flex", justifyContent: "space-around" }}>
       {items.map((item) => (
-        <Link
-          key={item.id}
-          to={`details/${item.id}`}
-          style={{ textDecoration: "none" }}
-        >
-          <Item
-            title={item.title}
-            price={item.price}
-            description={item.description}
-            image={item.image}
-          />
-        </Link>
+        <Item
+          id={item.id}
+          title={item.title}
+          price={item.price}
+          description={item.description}
+          image={item.image}
+        />
       ))}
     </div>
   );
