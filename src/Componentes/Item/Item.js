@@ -33,11 +33,6 @@ const styles = {
   },
 };
 const Item = ({ id, title, description, price, image }) => {
-  const [itemDetail, setItemDetail] = useState();
-
-  const getItem = (event, id) => {
-    console.log(id);
-  };
   return (
     <div style={styles.item}>
       <img style={styles.itemImage} src={image} />

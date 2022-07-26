@@ -1,0 +1,54 @@
+.masterButton {
+  width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+}
+
+.countButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  background-color: #8a8884;
+  border-radius: 30px;
+}
+
+.addButton {
+  height: 60%;
+  align-self: center;
+  cursor: pointer;
+}
+
+.addCartButton {
+  border: 0px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: large;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #212529;
+  color: white;
+}
+
+.addCart {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
+
+.countText {
+  align-content: center;
+  text-align: center;
+}
+
+.itemAmount {
+  text-align: center;
+  font-size: medium;
+  color: #8a8884;
+}

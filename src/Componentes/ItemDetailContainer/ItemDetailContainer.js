@@ -15,7 +15,6 @@ const ItemDetailContainer = () => {
     });
     getProductById
       .then((data) => {
-        console.log(data);
         setItems(data);
       })
       .catch((error) => {

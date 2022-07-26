@@ -8,6 +8,7 @@ const Products = [
     description:
       "Estos modelitos de pijama son babuchas, de algodón con lycra.",
     price: "$1000",
+    cantidad: 100,
   },
   {
     id: "2",
@@ -17,6 +18,7 @@ const Products = [
     title: "Pijama Cielo",
     description: "Sus pantalones son rectos y súper cómodos.",
     price: "$2000",
+    cantidad: 10,
   },
   {
     id: "3",
@@ -27,6 +29,7 @@ const Products = [
     description:
       "Lo que más amamos de este modelito es su sencillez pero con sus detalles que lo hacen TODO",
     price: "$3000",
+    cantidad: 300,
   },
 ];
 

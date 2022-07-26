@@ -7,9 +7,11 @@ const styles = {
   },
 };
 
-const CardWidget = () => {
+const CardWidget = (props) => {
+  console.log(props)
   return (
     <div>
+      {/* <h1>{items.cantidad}</h1> */}
       <img style={styles.cardStyle} src={Carrito} className="Carrito" />
     </div>
   );
