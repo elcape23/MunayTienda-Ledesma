@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { Link } from "react-router-dom";
+import CartContainer from "../CartContainer/CartContainer";
 import "./ItemCount.css";
+
+export const CantidadContext = createContext();
 
 const ItemCount = ({ items, handleClick }) => {
   const [cantidad, setCantidad] = useState(0);
@@ -27,17 +30,19 @@ const ItemCount = ({ items, handleClick }) => {
         />
       </div>
       <div className="addCart">
-        <Link to={"/cart"}>
-          <button
-            className="addCartButton"
-            onClick={() => {
-              handleClick(items.cantidad);
-              console.log(cantidad);
-            }}
-          >
-            Agregar al Carrito
-          </button>
-        </Link>
+        <CantidadContext.Provider value={{ cantidad: cantidad }}>
+          <Link to={"/cart"}>
+            <button
+              className="addCartButton"
+              onClick={() => {
+                handleClick(items.cantidad);
+                console.log(cantidad);
+              }}
+            >
+              Agregar al Carrito
+            </button>
+          </Link>
+        </CantidadContext.Provider>
         <h4 className="itemAmount">{items.cantidad} disponibles</h4>
       </div>
     </div>

@@ -1,8 +1,10 @@
-const CartContainer = ({items}) => {
-  console.log(items)
-  return (
-    <div>CartContainer</div>
-  )
-}
+import { useContext } from "react";
+import { CantidadContext } from "../ItemCount/ItemCount";
 
-export default CartContainer
+const CartContainer = () => {
+  const { cantidad } = useContext(CantidadContext);
+  console.log(cantidad);
+  return <div>{cantidad}</div>;
+};
+
+export default CartContainer;

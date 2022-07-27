@@ -8,7 +8,6 @@ const styles = {
 };
 
 const CardWidget = (props) => {
-  console.log(props)
   return (
     <div>
       {/* <h1>{items.cantidad}</h1> */}
