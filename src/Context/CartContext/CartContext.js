@@ -1,31 +1,28 @@
-import { createContext, useEffect, useState } from "react";
-import Products from "../../API/Products";
-import CartContainer from "../../Componentes/CartContainer/CartContainer";
+import { createContext, useState } from "react";
 
-export const ItemsProvider = createContext();
+export const CartContext = createContext();
 
-const CartContext = ({ children }) => {
-  const [items, setItems] = useState([]);
-  console.log(items.title);
-  useEffect(() => {
-    const getProducts = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(Products);
-      }, 2000);
-    });
-    getProducts
-      .then((data) => {
-        setItems(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+const Provider = (props) => {
+  const [cart, setCart] = useState([]);
+  const addToCart = (item, cantidad) => {
+    if (isInCart(item.id)) {
+      alert('Ya está en el carrito')
+    } else {
+      setCart([...cart, { ...item, cantidad }]);
+    }
+    // console.log({ ...item, cantidad });
+    // console.log("Agregando al carrito");
+  };
+
+  const isInCart = (id) => {
+    return cart.some((item) => item.id === id);
+  };
+
   return (
-    <ItemsProvider.Provider>
-      <CartContainer />
-    </ItemsProvider.Provider>
+    <CartContext.Provider value={{ cart, addToCart }}>
+      {props.children}
+    </CartContext.Provider>
   );
 };
 
-export default CartContext;
+export default Provider;

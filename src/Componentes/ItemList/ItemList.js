@@ -16,5 +16,4 @@ const ItemList = ({ items }) => {
   );
 };
 
-//Aquí se tendría que hacer el < Link /> para
 export default ItemList;

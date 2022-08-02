@@ -1,17 +1,16 @@
 import { createContext, useState } from "react";
 import { Link } from "react-router-dom";
-import CartContainer from "../CartContainer/CartContainer";
 import "./ItemCount.css";
 
 export const CantidadContext = createContext();
 
-const ItemCount = ({ items, handleClick }) => {
-  const [cantidad, setCantidad] = useState(0);
+const ItemCount = ({ items, onAdd }) => {
+  const [count, setCount] = useState(0);
   const incrementar = () => {
-    cantidad < items.cantidad ? setCantidad(cantidad + 1) : alert("Sin stock");
+    count < items.cantidad ? setCantidad(count + 1) : alert("Sin stock");
   };
   const disminuir = () => {
-    cantidad > "0" ? setCantidad(cantidad - 1) : console.log("error");
+    count > "0" ? setCount(count - 1) : console.log("error");
   };
 
   return (
@@ -22,7 +21,7 @@ const ItemCount = ({ items, handleClick }) => {
           className="addButton"
           onClick={disminuir}
         />
-        <h2 className="countText">{cantidad}</h2>
+        <h2 className="countText">{count}</h2>
         <img
           src="https://dm2306files.storage.live.com/y4msc0yd6e8CDacc5AkhXWEbnnP6EH7R6c0Kbnq5B4_eOXUBL3QAObTnv4pCWA-pLvUGxReoPQ_cHczuflw9UHMEjTd6oIsGedMYfy-QKtW00FGwbyoWmz8HE-22-vafdKC9lILWiCWEBHX4SyVFCBRe9MVEWFvZnf-MxCNiiJ1wIX1xp5H6pn5wzdxebODwFQJ?width=50&height=50&cropmode=none"
           className="addButton"
@@ -30,19 +29,11 @@ const ItemCount = ({ items, handleClick }) => {
         />
       </div>
       <div className="addCart">
-        <CantidadContext.Provider value={{ cantidad: cantidad }}>
-          <Link to={"/cart"}>
-            <button
-              className="addCartButton"
-              onClick={() => {
-                handleClick(items.cantidad);
-                console.log(cantidad);
-              }}
-            >
-              Agregar al Carrito
-            </button>
-          </Link>
-        </CantidadContext.Provider>
+        <Link to={"/cart"}>
+          <button className="addCartButton" onClick={() => onAdd(count)}>
+            Agregar al Carrito
+          </button>
+        </Link>
         <h4 className="itemAmount">{items.cantidad} disponibles</h4>
       </div>
     </div>
