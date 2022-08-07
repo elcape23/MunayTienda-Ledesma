@@ -7,7 +7,7 @@ export const CantidadContext = createContext();
 const ItemCount = ({ items, onAdd }) => {
   const [count, setCount] = useState(0);
   const incrementar = () => {
-    count < items.cantidad ? setCantidad(count + 1) : alert("Sin stock");
+    count < items.cantidad ? setCount(count + 1) : alert("Sin stock");
   };
   const disminuir = () => {
     count > "0" ? setCount(count - 1) : console.log("error");

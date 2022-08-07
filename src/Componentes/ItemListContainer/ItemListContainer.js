@@ -1,6 +1,6 @@
 import ItemList from "../ItemList/ItemList";
-import Products from "../../API/Products.js";
 import { useState, useEffect } from "react";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const styles = {
   itemStyles: {
@@ -25,26 +25,37 @@ const styles = {
   },
 };
 
-const ItemListContainer = ({ name }) => {
+const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-  useEffect(() => {
-    const getProducts = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(Products);
-      }, 2000);
+
+  const getProducts = async () => {
+    const db = getFirestore();
+    await getDocs(collection(db, "items")).then((snapshot) => {
+      const dataExtraida = snapshot.docs.map((datos) => datos.data());
+      setItems(dataExtraida);
+      console.log(dataExtraida);
     });
-    getProducts
-      .then((data) => {
-        setItems(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+  };
+
+  useEffect(() => {
+    // const getProducts = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve(Products);
+    //   }, 2000);
+    // });
+    // getProducts
+    //   .then((data) => {
+    //     setItems(data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+    getProducts();
+  }, []);
 
   return (
     <>
-      <h1 style={styles.itemStyles}>¡Hola {name}! Bienvenido a Munay</h1>
+      <h1 style={styles.itemStyles}>¡Hola! Bienvenido a Munay</h1>
       <div style={styles.ItemListContainer}>
         <ItemList items={items} />
       </div>

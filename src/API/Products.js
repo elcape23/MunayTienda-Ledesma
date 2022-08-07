@@ -7,7 +7,7 @@ const Products = [
     title: "Pijama Estrellas",
     description:
       "Estos modelitos de pijama son babuchas, de algodón con lycra.",
-    price: "$1000",
+    price: 1000,
     cantidad: 100,
   },
   {
@@ -17,7 +17,7 @@ const Products = [
       "https://dm2306files.storage.live.com/y4maxU_7pmEuI7EJXEjBDLdVOGhb2lZavJCd5On0X3UBOb3YBnTI68mx6_azx5YzfyMwrNFBPb1yWRP41zZNCDUqeK8bqDPBtGYBLsTii0HmR-t_Q7eps8tZtIe-7_DsCd1cRso-AkzzTuGZW0qB-bfF9k02-rlTVHR7lV-m_8YlAuAbywbLrYzl2mMc6d64aK6?width=850&height=850&cropmode=none",
     title: "Pijama Cielo",
     description: "Sus pantalones son rectos y súper cómodos.",
-    price: "$2000",
+    price: 2000,
     cantidad: 10,
   },
   {
@@ -28,7 +28,7 @@ const Products = [
     title: "Pijama Vani",
     description:
       "Lo que más amamos de este modelito es su sencillez pero con sus detalles que lo hacen TODO",
-    price: "$3000",
+    price: 3000,
     cantidad: 300,
   },
 ];

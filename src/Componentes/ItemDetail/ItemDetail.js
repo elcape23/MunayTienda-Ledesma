@@ -12,6 +12,10 @@ const ItemDetail = ({ items }) => {
     addToCart(items, cantidad);
   };
 
+  // if (cantidad === 0) {
+  //   return <h1>La cantidad es 0</h1>;
+  // }
+
   return (
     <>
       <div className="div-detail">
