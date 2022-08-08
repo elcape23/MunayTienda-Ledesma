@@ -38,7 +38,7 @@ const Item = ({ id, title, description, price, image }) => {
       <img style={styles.itemImage} src={image} />
       <h2>{title}</h2>
       <div>{description}</div>
-      <h1>{price}</h1>
+      <h1>${price}</h1>
       <h6>Nº{id}</h6>
       <Link to={`/details/${id}`}>
         <button style={styles.itemButton}>Ver producto</button>

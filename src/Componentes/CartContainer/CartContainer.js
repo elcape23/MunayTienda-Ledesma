@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext/CartContext";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 const CartContainer = () => {
   const { cart } = useContext(CartContext);

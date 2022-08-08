@@ -1,6 +1,12 @@
 import ItemList from "../ItemList/ItemList";
 import { useState, useEffect } from "react";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
 
 const styles = {
   itemStyles: {
@@ -27,14 +33,28 @@ const styles = {
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+  const [filter, setFilter] = useState("");
 
   const getProducts = async () => {
     const db = getFirestore();
-    await getDocs(collection(db, "items")).then((snapshot) => {
-      const dataExtraida = snapshot.docs.map((datos) => datos.data());
+    let q;
+    if (filter) {
+      q = query(collection(db, "items"), where("category", "==", filter));
+    } else {
+      q = query(collection(db, "items"));
+    }
+    await getDocs(q).then((snapshot) => {
+      const dataExtraida = snapshot.docs.map((datos) => {
+        return { ...datos.data(), id: datos.id };
+      });
       setItems(dataExtraida);
-      console.log(dataExtraida);
     });
+  };
+
+  const setFilterValue = (e) => {
+    const filter = e.target.value;
+    setFilter(filter);
+    getProducts();
   };
 
   useEffect(() => {
@@ -51,13 +71,13 @@ const ItemListContainer = () => {
     //     console.log(error);
     //   });
     getProducts();
-  }, []);
+  }, [filter]);
 
   return (
     <>
       <h1 style={styles.itemStyles}>¡Hola! Bienvenido a Munay</h1>
       <div style={styles.ItemListContainer}>
-        <ItemList items={items} />
+        <ItemList items={items} setFilterValue={setFilterValue} />
       </div>
     </>
   );
