@@ -1,0 +1,10 @@
+.item {
+  display: flex;
+  justify-content: space-around;
+}
+
+.selector {
+  display: flex;
+  justify-content: center;
+
+}

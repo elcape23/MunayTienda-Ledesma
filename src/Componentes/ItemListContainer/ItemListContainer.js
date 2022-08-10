@@ -7,29 +7,7 @@ import {
   query,
   where,
 } from "firebase/firestore";
-
-const styles = {
-  itemStyles: {
-    color: "#b7b6b5",
-    backgroundColor: "#edeae5",
-    width: "50%",
-    marginRight: "auto",
-    marginLeft: "auto",
-    textAlign: "center",
-    marginTop: "50px",
-    fontSize: "70px",
-    borderRadius: "40px",
-    paddingTop: "10px",
-    paddingBottom: "10px",
-  },
-  ItemListContainer: {
-    width: "100%",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-around",
-    margin: "0 auto",
-  },
-};
+import "./ItemListContainer.css";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -75,8 +53,8 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <h1 style={styles.itemStyles}>¡Hola! Bienvenido a Munay</h1>
-      <div style={styles.ItemListContainer}>
+      <h1 className="welcome-title">¡Hola! Bienvenido a Munay</h1>
+      <div className="list-container">
         <ItemList items={items} setFilterValue={setFilterValue} />
       </div>
     </>

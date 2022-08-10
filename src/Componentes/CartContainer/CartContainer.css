@@ -1,0 +1,33 @@
+.orders {
+  display: flex;
+  flex-direction: column;
+}
+
+.carrito-title {
+  text-align: center;
+}
+
+.selected-prod {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  background-color: #edeae5;
+  margin-bottom: 10px;
+}
+
+.img {
+  width: 50px;
+}
+
+.home-link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+  margin-left: 80vw;
+}
+
+.home-link:hover {
+  color: black;
+}

@@ -1,8 +1,15 @@
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import Products from "../../API/Products.js";
 import { useParams } from "react-router-dom";
-import { doc, getDoc, getFirestore, query, where } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
@@ -11,25 +18,12 @@ const ItemDetailContainer = () => {
   const getProductById = async () => {
     const db = getFirestore();
     const productConfig = doc(db, "items", id);
-    getDoc(productConfig).then((snapshot) => {
-      console.log(snapshot.data());
-      setItems(snapshot.data());
+    await getDoc(productConfig).then((snapshot) => {
+      setItems({ ...snapshot.data(), id: id });
     });
   };
 
   useEffect(() => {
-    // const getProductById = new Promise((resolve, reject) => {
-    //   setTimeout(() => {
-    //     resolve(Products.find((prod) => prod.id === id));
-    //   }, 2000);
-    // });
-    // getProductById
-    //   .then((data) => {
-    //     setItems(data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
     getProductById();
   }, []);
 

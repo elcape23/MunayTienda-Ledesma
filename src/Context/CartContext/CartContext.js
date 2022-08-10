@@ -5,8 +5,9 @@ export const CartContext = createContext();
 const Provider = (props) => {
   const [cart, setCart] = useState([]);
   const addToCart = (item, cantidad) => {
+    console.log(item);
     if (isInCart(item.id)) {
-      alert('Ya está en el carrito')
+      alert("Ya está en el carrito");
     } else {
       setCart([...cart, { ...item, cantidad }]);
     }

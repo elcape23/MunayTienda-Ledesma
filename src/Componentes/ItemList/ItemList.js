@@ -1,5 +1,6 @@
 import Item from "../Item/Item";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import "./ItemList.css";
 
 const ItemList = ({ items, setFilterValue }) => {
   const createOrder = (e) => {
@@ -20,7 +21,7 @@ const ItemList = ({ items, setFilterValue }) => {
 
   return (
     <>
-      <div>
+      <div className="selector">
         <select onChange={(event) => setFilterValue(event)}>
           <option value="">Todos</option>
           <option value="bombacha">Bombacha</option>
@@ -29,7 +30,9 @@ const ItemList = ({ items, setFilterValue }) => {
         </select>
         <button onClick={(event) => createOrder(event)}>Crear orden</button>
       </div>
-      <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div
+        className="item"
+      >
         {items.map((item) => (
           <Item
             id={item.id}
