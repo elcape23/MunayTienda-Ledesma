@@ -14,11 +14,11 @@ const ItemDetail = ({ items }) => {
 
   return (
     <>
-      <div className="div-detail">
-        <img src={items.image} className="image-item" />
-        <h1 className="item-title">{items.title}</h1>
-        <h5 className="item-id">{items.id}</h5>
-        <h2 className="item-description">{items.description}</h2>
+      <div className="item-detail-div">
+        <img src={items.image} className="item-detail-image" />
+        <h1 className="item-detail-title">{items.title}</h1>
+        <h5 className="item-detail-id">{items.id}</h5>
+        <h2 className="item-detail-description">{items.description}</h2>
         <h1>{items.precio}</h1>
       </div>
       <ItemCount items={items} onAdd={onAdd} />

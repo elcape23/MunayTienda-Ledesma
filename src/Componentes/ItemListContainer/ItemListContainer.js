@@ -8,7 +8,6 @@ import {
   where,
 } from "firebase/firestore";
 import "./ItemListContainer.css";
-import imageBackground from "../../Assets/img/semen-zhuravlev-5FuBbHonciU-unsplash.jpg";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -42,11 +41,12 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <div className="container">
-        <img src={imageBackground} className="image-background"/>
-        <h1 className="title">NUEVOS PRODUCTOS</h1>
-      </div>
       <div className="list-container">
+        <div className="products-container-titles">
+          <h3 className="products-title">PRODUCTOS</h3>
+          <h4 className="products-text">productos</h4>
+          <h4 className="products-text">productos</h4>
+        </div>
         <ItemList items={items} setFilterValue={setFilterValue} />
       </div>
     </>

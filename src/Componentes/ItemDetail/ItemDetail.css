@@ -1,4 +1,4 @@
-.div-detail {
+.item-detail-div {
   width: 40vw;
   background-color: #dbd4ca;
   margin-left: auto;
@@ -6,13 +6,13 @@
   border-radius: 50px;
 }
 
-.image-item {
+.-item-detail-image {
   width: 40vw;
   border-radius: 50px 50px 0px 0px;
   justify-self: center;
 }
 
-.item-description {
+.item-detail-description {
   font-size: 25px;
   font-weight: lighter;
   margin-left: auto;
@@ -20,13 +20,13 @@
   width: 80%;
 }
 
-.item-title {
+.item-detail-title {
   font-size: 50px;
   font-weight: bold;
   text-align: center;
 }
 
-.item-id {
+.item-detail-id {
   font-size: 20px;
   font-weight: lighter;
   text-align: center;

@@ -5,6 +5,8 @@ import NavBar from "./Componentes/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartContainer from "./Componentes/CartContainer/CartContainer";
 import Provider from "./Context/CartContext/CartContext";
+import { CategoryContainer } from "./Componentes/CategoryContainer/CategoryContainer";
+import { Home } from "./Componentes/Home/Home";
 
 function App() {
   return (
@@ -12,11 +14,11 @@ function App() {
       <BrowserRouter className="master-container">
         <NavBar />
         <Routes>
-          <Route path="/" element={<ItemListContainer />} />
           <Route
             path="category/:category"
-            element={<ItemListContainer />}
+            element={<CategoryContainer />}
           ></Route>
+          <Route path="/" element={<Home />} />
           <Route path="details/:id" element={<ItemDetailContainer />} />
           <Route path="cart" element={<CartContainer />} />
         </Routes>

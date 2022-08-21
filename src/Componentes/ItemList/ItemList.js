@@ -21,7 +21,7 @@ const ItemList = ({ items, setFilterValue }) => {
 
   return (
     <>
-      <div className="selector">
+      {/* <div className="selector">
         <select onChange={(event) => setFilterValue(event)}>
           <option value="">Todos</option>
           <option value="bombacha">Bombacha</option>
@@ -29,10 +29,8 @@ const ItemList = ({ items, setFilterValue }) => {
           <option value="pijama">Pijama</option>
         </select>
         <button onClick={(event) => createOrder(event)}>Crear orden</button>
-      </div>
-      <div
-        className="item"
-      >
+      </div> */}
+      <div className="item-list">
         {items.map((item) => (
           <Item
             id={item.id}

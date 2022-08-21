@@ -1,8 +1,8 @@
 @media only screen and (min-width: 360px) and (max-width: 576px) {
-  .item {
-    justify-content: center;
+  .item-list {
+    display: flex;
+    flex-wrap: wrap;
   }
-
   .selector {
     display: flex;
     justify-content: center;

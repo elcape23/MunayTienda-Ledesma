@@ -18,6 +18,7 @@
   }
 
   .navbar {
+    z-index: 100;
     width: 90vw;
     position: fixed;
     bottom: 3%;
