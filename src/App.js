@@ -9,7 +9,7 @@ import Provider from "./Context/CartContext/CartContext";
 function App() {
   return (
     <Provider>
-      <BrowserRouter>
+      <BrowserRouter className="master-container">
         <NavBar />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />

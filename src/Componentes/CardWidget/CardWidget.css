@@ -1,0 +1,8 @@
+@media only screen and (min-width: 360px) and (max-width: 576px) {
+  .carrito {
+    width: 100%;
+    align-self: end;
+    justify-self: right;
+    opacity: 0.8;
+  }
+}

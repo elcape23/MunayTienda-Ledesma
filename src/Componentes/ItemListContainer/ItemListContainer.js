@@ -8,6 +8,7 @@ import {
   where,
 } from "firebase/firestore";
 import "./ItemListContainer.css";
+import imageBackground from "../../Assets/img/semen-zhuravlev-5FuBbHonciU-unsplash.jpg";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -36,24 +37,15 @@ const ItemListContainer = () => {
   };
 
   useEffect(() => {
-    // const getProducts = new Promise((resolve, reject) => {
-    //   setTimeout(() => {
-    //     resolve(Products);
-    //   }, 2000);
-    // });
-    // getProducts
-    //   .then((data) => {
-    //     setItems(data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
     getProducts();
   }, [filter]);
 
   return (
     <>
-      <h1 className="welcome-title">¡Hola! Bienvenido a Munay</h1>
+      <div className="container">
+        <img src={imageBackground} className="image-background"/>
+        <h1 className="title">NUEVOS PRODUCTOS</h1>
+      </div>
       <div className="list-container">
         <ItemList items={items} setFilterValue={setFilterValue} />
       </div>
